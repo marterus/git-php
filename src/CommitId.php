@@ -1,6 +1,6 @@
 <?php
 
-	namespace CzProject\GitPhp;
+	namespace Marterus\GitPhp;
 
 
 	class CommitId

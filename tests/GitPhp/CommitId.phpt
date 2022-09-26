@@ -1,8 +1,8 @@
 <?php
 
 use Tester\Assert;
-use CzProject\GitPhp\CommitId;
-use CzProject\GitPhp\InvalidArgumentException;
+use Marterus\GitPhp\CommitId;
+use Marterus\GitPhp\InvalidArgumentException;
 
 require __DIR__ . '/bootstrap.php';
 

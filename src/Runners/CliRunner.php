@@ -1,11 +1,11 @@
 <?php
 
-	namespace CzProject\GitPhp\Runners;
+	namespace Marterus\GitPhp\Runners;
 
-	use CzProject\GitPhp\CommandProcessor;
-	use CzProject\GitPhp\GitException;
-	use CzProject\GitPhp\IRunner;
-	use CzProject\GitPhp\RunnerResult;
+	use Marterus\GitPhp\CommandProcessor;
+	use Marterus\GitPhp\GitException;
+	use Marterus\GitPhp\IRunner;
+	use Marterus\GitPhp\RunnerResult;
 
 
 	class CliRunner implements IRunner
@@ -92,7 +92,7 @@
 			$cwd = getcwd();
 
 			if (!is_string($cwd)) {
-				throw new \CzProject\GitPhp\InvalidStateException('Getting of CWD failed.');
+				throw new \Marterus\GitPhp\InvalidStateException('Getting of CWD failed.');
 			}
 
 			return $cwd;

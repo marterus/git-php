@@ -1,18 +1,18 @@
 <?php
 
 use Tester\Assert;
-use CzProject\GitPhp\Git;
-use CzProject\GitPhp\GitException;
-use CzProject\GitPhp\Tests\AssertRunner;
+use Marterus\GitPhp\Git;
+use Marterus\GitPhp\GitException;
+use Marterus\GitPhp\Tests\AssertRunner;
 
 require __DIR__ . '/bootstrap.php';
 
 $runner = new AssertRunner(__DIR__);
 $git = new Git($runner);
 
-$runner->assert(['clone', '-q', '--end-of-options', 'git@github.com:czproject/git-php.git', __DIR__]);
-$runner->assert(['remote', 'add', '--end-of-options', 'origin2', 'git@github.com:czproject/git-php.git']);
-$runner->assert(['remote', 'add', '--end-of-options', 'remote', 'git@github.com:czproject/git-php.git']);
+$runner->assert(['clone', '-q', '--end-of-options', 'git@github.com:Marterus/git-php.git', __DIR__]);
+$runner->assert(['remote', 'add', '--end-of-options', 'origin2', 'git@github.com:Marterus/git-php.git']);
+$runner->assert(['remote', 'add', '--end-of-options', 'remote', 'git@github.com:Marterus/git-php.git']);
 $runner->assert(['remote', 'add', [
 	'--mirror=push',
 ], '--end-of-options', 'only-push', 'test-url']);
@@ -22,9 +22,9 @@ $runner->assert(['remote', 'set-url', [
 ], '--end-of-options', 'origin3', 'test-url']);
 $runner->assert(['remote', 'remove', '--end-of-options', 'origin2']);
 
-$repo = $git->cloneRepository('git@github.com:czproject/git-php.git', __DIR__);
-$repo->addRemote('origin2', 'git@github.com:czproject/git-php.git');
-$repo->addRemote('remote', 'git@github.com:czproject/git-php.git');
+$repo = $git->cloneRepository('git@github.com:Marterus/git-php.git', __DIR__);
+$repo->addRemote('origin2', 'git@github.com:Marterus/git-php.git');
+$repo->addRemote('remote', 'git@github.com:Marterus/git-php.git');
 $repo->addRemote('only-push', 'test-url', [
 	'--mirror=push',
 ]);

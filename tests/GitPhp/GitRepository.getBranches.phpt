@@ -1,9 +1,9 @@
 <?php
 
 use Tester\Assert;
-use CzProject\GitPhp\Git;
-use CzProject\GitPhp\GitException;
-use CzProject\GitPhp\Runners\MemoryRunner;
+use Marterus\GitPhp\Git;
+use Marterus\GitPhp\GitException;
+use Marterus\GitPhp\Runners\MemoryRunner;
 
 require __DIR__ . '/bootstrap.php';
 

@@ -1,11 +1,11 @@
 <?php
 
-	namespace CzProject\GitPhp\Runners;
+	namespace Marterus\GitPhp\Runners;
 
-	use CzProject\GitPhp\CommandProcessor;
-	use CzProject\GitPhp\GitException;
-	use CzProject\GitPhp\IRunner;
-	use CzProject\GitPhp\RunnerResult;
+	use Marterus\GitPhp\CommandProcessor;
+	use Marterus\GitPhp\GitException;
+	use Marterus\GitPhp\IRunner;
+	use Marterus\GitPhp\RunnerResult;
 
 
 	class MemoryRunner implements IRunner
@@ -54,7 +54,7 @@
 			$cmd = $this->commandProcessor->process('git', $args, $env);
 
 			if (!isset($this->results[$cmd])) {
-				throw new \CzProject\GitPhp\InvalidStateException("Missing result for command '$cmd'.");
+				throw new \Marterus\GitPhp\InvalidStateException("Missing result for command '$cmd'.");
 			}
 
 			return $this->results[$cmd];

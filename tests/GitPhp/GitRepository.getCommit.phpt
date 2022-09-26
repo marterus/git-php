@@ -1,8 +1,8 @@
 <?php
 
 use Tester\Assert;
-use CzProject\GitPhp\Git;
-use CzProject\GitPhp\Tests\AssertRunner;
+use Marterus\GitPhp\Git;
+use Marterus\GitPhp\Tests\AssertRunner;
 
 require __DIR__ . '/bootstrap.php';
 

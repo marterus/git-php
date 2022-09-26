@@ -1,14 +1,14 @@
 <?php
 
-	namespace CzProject\GitPhp\Tests;
+	namespace Marterus\GitPhp\Tests;
 
-	use CzProject\GitPhp\CommandProcessor;
-	use CzProject\GitPhp\GitException;
-	use CzProject\GitPhp\IRunner;
-	use CzProject\GitPhp\RunnerResult;
+	use Marterus\GitPhp\CommandProcessor;
+	use Marterus\GitPhp\GitException;
+	use Marterus\GitPhp\IRunner;
+	use Marterus\GitPhp\RunnerResult;
 
 
-	class AssertRunner implements \CzProject\GitPhp\IRunner
+	class AssertRunner implements \Marterus\GitPhp\IRunner
 	{
 		/** @var string */
 		private $cwd;
@@ -51,14 +51,14 @@
 		public function run($cwd, array $args, array $env = NULL)
 		{
 			if (empty($this->asserts)) {
-				throw new \CzProject\GitPhp\InvalidStateException('Missing asserts, use $runner->assert().');
+				throw new \Marterus\GitPhp\InvalidStateException('Missing asserts, use $runner->assert().');
 			}
 
 			$cmd = $this->commandProcessor->process('git', $args, $env);
 			$result = current($this->asserts);
 
 			if (!($result instanceof RunnerResult)) {
-				throw new \CzProject\GitPhp\InvalidStateException("Missing assert for command '$cmd'");
+				throw new \Marterus\GitPhp\InvalidStateException("Missing assert for command '$cmd'");
 			}
 
 			\Tester\Assert::same($result->getCommand(), $cmd);
